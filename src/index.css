@@ -1,0 +1,10 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+:root{--bg:#eef3f5;--sf:#fff;--ink:#0d2530;--mut:#5f7d88;--pri:#0f6d7a;--pc:#dff1f3;--r:20px;--gl:rgba(255,255,255,.34);--gl2:rgba(255,255,255,.62);--gb:rgba(255,255,255,.65);--gs:0 12px 32px -12px rgba(20,60,90,.35);--b1:#4fd1c5;--b2:#ff7a6b;--b3:#8b7bff;--b4:#6ec6ff}
+@media (prefers-color-scheme:dark){:root{--bg:#061820;--sf:#0d2832;--ink:#e8f5f6;--mut:#8aaab2;--pc:#173f4a;--gl:rgba(255,255,255,.08);--gl2:rgba(20,50,60,.7);--gb:rgba(255,255,255,.2);--gs:0 14px 34px -12px #000;--b1:#0e7c86;--b2:#a8403a;--b3:#4a3fb0;--b4:#1b5f9a}}
+[data-s=android]{--pri:#006b5e;--pc:#c8f0e6;--r:26px}
+[data-s=ios]{--pri:#007aff;--pc:#e3efff;--r:16px}
+html,body,#root{height:100%;margin:0;background:var(--bg);-webkit-tap-highlight-color:transparent}
+@media (prefers-reduced-motion:reduce){*,*::before,*::after{animation:none!important;transition:none!important}}
+@layer components{.glass{background:var(--gl);-webkit-backdrop-filter:blur(26px) saturate(190%);backdrop-filter:blur(26px) saturate(190%);border:1px solid var(--gb);box-shadow:var(--gs),inset 0 1.5px 0 rgba(255,255,255,.75)}}
