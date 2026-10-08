@@ -1,0 +1,8 @@
+{
+ "appId": "com.hospital.app",
+ "appName": "Hospital",
+ "webDir": "www",
+ "server": {
+  "androidScheme": "https"
+ }
+}

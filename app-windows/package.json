@@ -1,0 +1,32 @@
+{
+ "name": "hospital-windows",
+ "version": "1.0.0",
+ "description": "Hospital app",
+ "author": "Hospital",
+ "main": "main.js",
+ "scripts": {
+  "start": "electron .",
+  "dist": "electron-builder --win"
+ },
+ "devDependencies": {
+  "electron": "^31.0.0",
+  "electron-builder": "^24.13.3"
+ },
+ "build": {
+  "appId": "com.hospital.app",
+  "productName": "Hospital",
+  "files": [
+   "main.js",
+   "www/**/*"
+  ],
+  "win": {
+   "target": [
+    "nsis",
+    "portable"
+   ]
+  },
+  "directories": {
+   "output": "dist"
+  }
+ }
+}
