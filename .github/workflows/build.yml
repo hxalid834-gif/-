@@ -1,4 +1,4 @@
-name: Build Flutter APK and EXE
+name: Build and Deploy
 
 on:
   push:
@@ -6,43 +6,19 @@ on:
 
 jobs:
   build:
-  
-    runs-on: windows-latest
+    runs-on: ubuntu-latest
 
     steps:
     - name: Checkout code
       uses: actions/checkout@v4
 
-    - name: Set up Java
-      uses: actions/setup-java@v4
+    - name: Setup Node.js
+      uses: actions/setup-node@v4
       with:
-        distribution: 'zulu'
-        java-version: '17'
-
-    - name: Set up Flutter
-      uses: subosito/flutter-action@v2
-      with:
-        flutter-version: '3.19.0'
-        channel: 'stable'
-        cache: true
+        node-version: '20'
 
     - name: Install Dependencies
-      run: flutter pub get
+      run: npm install
 
-    - name: Build Android APK
-      run: flutter build apk --release
-
-    - name: Build Windows EXE
-      run: flutter build windows --release
-
-    - name: Upload APK Artifact
-      uses: actions/upload-artifact@v4
-      with:
-        name: app-release-apk
-        path: build/app/outputs/flutter-apk/app-release.apk
-
-    - name: Upload EXE Artifact
-      uses: actions/upload-artifact@v4
-      with:
-        name: app-release-exe
-        path: build/windows/x64/runner/Release/
+    - name: Build Project
+      run: npm run build
