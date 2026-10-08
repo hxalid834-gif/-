@@ -45,6 +45,7 @@ jobs:
       - uses: actions/setup-node@v4
         with: {node-version: 20}
       - run: npm install
+      # Hedi Update
       - run: npx vite build --mode ${{ matrix.skin }} --outDir web-${{ matrix.skin }}
       - uses: actions/upload-artifact@v4
         with:
