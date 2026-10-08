@@ -19,6 +19,8 @@ jobs:
 
     - name: Install Dependencies
       run: npm install
+      working-directory: ./app-windows
 
     - name: Build Project
       run: npm run build:desktop
+      working-directory: ./app-windows
